@@ -1,0 +1,35 @@
+version: '3'
+
+rpc:
+  listen: 'tcp://127.0.0.1:6001'
+
+server:
+  command: 'php ./vendor/bin/roadrunner-worker'
+  relay: 'unix:///var/run/rr/rr.sock'
+  env:
+    - APP_BASE_PATH: /app
+
+logs:
+  mode: development
+  level: info
+  encoding: console
+  output: stdout
+
+http:
+  address: 0.0.0.0:8080
+  max_request_size: 1
+  middleware: ['headers', 'static', 'gzip']
+  uploads:
+    forbid: ['.php', '.exe', '.bat', '.sh']
+  static:
+    dir: 'public'
+    forbid: ['.php']
+  pool:
+    debug: true
+    num_workers: 1
+
+metrics:
+  address: 0.0.0.0:2112
+
+status:
+  address: 0.0.0.0:8888
