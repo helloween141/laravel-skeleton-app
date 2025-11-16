@@ -1,0 +1,80 @@
+x-app-service: &app-service
+    image: laravel-skeleton-app:latest
+    restart: on-failure
+    env_file:
+        - .env
+    build:
+        context: .
+        dockerfile: ./docker/Dockerfile
+    volumes:
+        - ./:/app:cached
+        - ./docker/cron/cron-jobs:/etc/cron-jobs:ro
+    networks:
+        - app-network
+    depends_on:
+        - db
+        - redis
+        - rabbitmq
+
+services:
+    app:
+        <<: *app-service
+        ports:
+            - "${APP_PORT:-9001}:8080"
+        command: 'rr serve -c /app/.rr.local.yml'
+
+    db:
+        image: postgres:18.0-alpine
+        restart: on-failure
+        environment:
+            POSTGRES_DB: ${DB_DATABASE:-app}
+            POSTGRES_USER: ${DB_USERNAME:-forge}
+            POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+        volumes:
+            - pg-data:/var/lib/postgresql/data:cached
+        command: ['postgres', '-c', 'log_statement=all', '-c', 'log_destination=stderr']
+        ports:
+            - "${DB_PORT:-9002}:5432"
+        networks:
+            - app-network
+
+    redis:
+        image: redis:8.2-alpine
+        restart: on-failure
+        ports:
+            - "${REDIS_PORT:-9003}:6379"
+        volumes:
+            - redis-data:/data
+        networks:
+            - app-network
+
+    rabbitmq:
+        image: rabbitmq:4.2-management-alpine
+        restart: on-failure
+        ports:
+            - "${RABBITMQ_PORT:-5672}:5672"
+            - "${RABBITMQ_MANAGER_PORT:-15672}:15672"
+        volumes:
+            -  rabbitmq-data:/var/lib/rabbitmq
+        environment:
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-guest}
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-guest}
+        networks:
+            - app-network
+
+    queue:
+        <<: *app-service
+        command: 'php /app/artisan queue:work --memory=64 --tries=20'
+
+    scheduler:
+        <<: *app-service
+        command: 'supercronic /etc/cron-jobs'
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    pg-data:
+    redis-data:
+    rabbitmq-data:
