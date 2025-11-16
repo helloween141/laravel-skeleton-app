@@ -22,18 +22,16 @@ logs:
 
 http:
   address: 0.0.0.0:8080
-  http2:
-    h2c: true
   max_request_size: 200
-  middleware: [ "headers", "static", "gzip" ]
+  middleware: ['headers', 'static', 'gzip']
   uploads:
-    forbid: [ ".php", ".exe", ".bat", ".sh" ]
+    forbid: ['.php', '.exe', '.bat', '.sh']
   headers:
     response:
-      "X-Powered-By": "RoadRunner"
+      'X-Powered-By': 'RoadRunner'
   static:
-    dir: "public"
-    forbid: [ ".php" ]
+    dir: 'public'
+    forbid: ['.php']
   pool:
     num_workers: 16
     max_jobs: 256

@@ -51,7 +51,8 @@ Set app encryption key:
 Run migrations and seed database:
 
 ```shell
-  docker compose exec app ./artisan migrate
+  docker compose exec app ./artisan migrate:fresh --seed
 ```
 
-🎉 Your app is ready! Visit http://127.0.0.1:9001
+## 🎉 Your app is ready
+Open in you browser: http://127.0.0.1:9001

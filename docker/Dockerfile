@@ -5,7 +5,8 @@ FROM spiralscout/roadrunner:2025.1.2 as roadrunner
 FROM php:8.4-fpm-alpine as php
 
 ENV COMPOSER_HOME="/tmp/composer" \
-    SUPERCRONIC_VERSION="0.2.39"
+    SUPERCRONIC_VERSION="0.2.39" \
+    LARAVEL_OCTANE_ROADRUNNER_RELAY="unix:///var/run/rr/rr.sock"
 
 ENV PHPIZE_DEPS \
     autoconf \
@@ -75,6 +76,10 @@ RUN set -x \
     && chmod -R 755 ${COMPOSER_HOME}
 
 COPY . /app
+
+RUN mkdir -p /app/storage/logs /app/bootstrap/cache \
+    && chown -R appuser:www-data /app/storage /app/bootstrap/cache \
+    && chmod -R 775 /app/storage /app/bootstrap/cache
 
 RUN set -xe \
     && php -v \
