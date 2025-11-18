@@ -64,7 +64,7 @@ services:
 
     queue:
         <<: *app-service
-        command: 'php /app/artisan queue:work --memory=64 --tries=20'
+        command: ./docker/wait-for-it.sh rabbitmq 5672 "php /app/artisan queue:work --memory=64 --tries=20"
 
     scheduler:
         <<: *app-service
