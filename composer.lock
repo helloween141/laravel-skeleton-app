@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a07eec94f77f72112041f04603aac1c1",
+    "content-hash": "bf42324937ce4a1fd72ff0d3e6e78e66",
     "packages": [
         {
             "name": "brick/math",
@@ -658,16 +658,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v4.33.1",
+            "version": "v4.33.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "0cd73ccf0cd26c3e72299cce1ea6144091a57e12"
+                "reference": "ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/0cd73ccf0cd26c3e72299cce1ea6144091a57e12",
-                "reference": "0cd73ccf0cd26c3e72299cce1ea6144091a57e12",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d",
+                "reference": "ebe8010a61b2ae0cff0d246fe1c4d44e9f7dfa6d",
                 "shasum": ""
             },
             "require": {
@@ -696,9 +696,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.33.1"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.33.5"
             },
-            "time": "2025-11-12T21:58:05+00:00"
+            "time": "2026-01-29T20:49:00+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -4354,16 +4354,16 @@
         },
         {
             "name": "spiral/roadrunner",
-            "version": "v2025.1.6",
+            "version": "v2025.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "207b2b4ba75f2529ecccf801b3d8dd7038f22732"
+                "reference": "e3b05713e8d65ad4d5104d839890cc4892d63b2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/207b2b4ba75f2529ecccf801b3d8dd7038f22732",
-                "reference": "207b2b4ba75f2529ecccf801b3d8dd7038f22732",
+                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/e3b05713e8d65ad4d5104d839890cc4892d63b2d",
+                "reference": "e3b05713e8d65ad4d5104d839890cc4892d63b2d",
                 "shasum": ""
             },
             "type": "metapackage",
@@ -4391,7 +4391,7 @@
                 "chat": "https://discord.gg/V6EK4he",
                 "docs": "https://docs.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.6"
+                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2025.1.8"
             },
             "funding": [
                 {
@@ -4399,7 +4399,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-11T14:45:22+00:00"
+            "time": "2026-02-19T14:32:44+00:00"
         },
         {
             "name": "spiral/roadrunner-cli",
@@ -4472,16 +4472,16 @@
         },
         {
             "name": "spiral/roadrunner-http",
-            "version": "v3.6.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-php/http.git",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88"
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
+                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/8e241065a26cc500d021a29ce28be0d5f4b80a8f",
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f",
                 "shasum": ""
             },
             "require": {
@@ -4550,7 +4550,7 @@
                 "docs": "https://docs.roadrunner.dev",
                 "forum": "https://forum.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-php/http/tree/v3.6.0"
+                "source": "https://github.com/roadrunner-php/http/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -4558,7 +4558,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-31T12:42:23+00:00"
+            "time": "2026-02-18T16:00:02+00:00"
         },
         {
             "name": "spiral/roadrunner-worker",
@@ -5417,16 +5417,16 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v8.0.1",
+            "version": "v8.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-client.git",
-                "reference": "727fda60d0aebfdfcc4c8bc4661f0cb8f44153c0"
+                "reference": "f9fdd372473e66469c6d32a4ed12efcffdea38c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/727fda60d0aebfdfcc4c8bc4661f0cb8f44153c0",
-                "reference": "727fda60d0aebfdfcc4c8bc4661f0cb8f44153c0",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/f9fdd372473e66469c6d32a4ed12efcffdea38c4",
+                "reference": "f9fdd372473e66469c6d32a4ed12efcffdea38c4",
                 "shasum": ""
             },
             "require": {
@@ -5489,7 +5489,7 @@
                 "http"
             ],
             "support": {
-                "source": "https://github.com/symfony/http-client/tree/v8.0.1"
+                "source": "https://github.com/symfony/http-client/tree/v8.0.5"
             },
             "funding": [
                 {
@@ -5509,7 +5509,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-05T14:08:45+00:00"
+            "time": "2026-01-27T16:18:07+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
