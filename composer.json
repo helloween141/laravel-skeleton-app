@@ -15,7 +15,7 @@
         "laravel/tinker": "^2.10.1",
         "spiral/roadrunner-cli": "^2.6.0",
         "spiral/roadrunner-http": "^4.1.0",
-        "vladimir-yuldashev/laravel-queue-rabbitmq": "^14.4"
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "^15.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
